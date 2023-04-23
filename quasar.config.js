@@ -106,6 +106,8 @@ module.exports = configure(function (ctx) {
         //로컬 스토리지 등록
         'LocalStorage',
         'Notify',
+        'Loading',
+        'Dialog',
       ]
     },
 

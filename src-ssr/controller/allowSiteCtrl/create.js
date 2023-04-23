@@ -11,7 +11,7 @@ export default async(req, res, next) =>{
 
     // app토큰 생성
     const appToken = getEncodedId();
-    const data = await $DB.api.allowSite.create({
+    const data = await $DB.allowSite.create({
       appName,
       siteUrl,
       allowed,
