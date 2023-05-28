@@ -1,6 +1,6 @@
 // 운영 환경
 const production = {
-  API_SERVER : 'http://sso.bnb.com:20300',
+  API_SERVER : 'http://sso.bnb.com:20200',
   SESSION_DB : {
     host : 'localhost',
     port : 3306,
@@ -12,7 +12,7 @@ const production = {
 
 // 개발 환경
 const development = {
-  API_SERVER : 'http://sso.bnb.com:20300',
+  API_SERVER : 'http://sso.bnb.com:20200',
   SESSION_DB : {
     host : 'localhost',
     port : 3306,

@@ -4,7 +4,8 @@ import express from 'express';
 import Config from '../../config'
 import db from 'src-ssr/lib/ConnectSequelize';
 import ConnectSession from 'connect-session-sequelize';
-import getEncodedId from 'src-ssr/lib/getEncodedId'
+import getEncodedId from 'src-ssr/lib/getEncodedId';
+import socketIdCtrl from '../controller/socketIdCtrl';
 
 export default ssrMiddleware(async ({ app, port, resolve, publicPath, folders, render, serve }) => {
   const config = Config[process.env.NODE_ENV];
@@ -47,5 +48,5 @@ export default ssrMiddleware(async ({ app, port, resolve, publicPath, folders, r
     next();
   })
 
-
+  app.get('/socketId', socketIdCtrl);
 })
