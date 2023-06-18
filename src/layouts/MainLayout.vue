@@ -16,7 +16,8 @@
         </q-toolbar-title>
 
         <div class="row items-center q-gutter-x-xs">
-          <LoginBtn>로그인</LoginBtn>
+          <LogoutBtn v-if="isLogin">로그아웃</LogoutBtn>
+          <LoginBtn v-else>로그인</LoginBtn>
           <q-btn :to="{ name: 'AdmHome' }" label="Admin"></q-btn>
           <LanguageSelector
             flat
@@ -45,10 +46,13 @@
 import { defineComponent, ref } from "vue";
 import LanguageSelector from "components/etc/LanguageSelector.vue";
 import LoginBtn from "components/auth/LoginBtn.vue";
+import LogoutBtn from "src/components/auth/LogoutBtn.vue";
+import { mapState } from "pinia";
+import useUser from 'src/stores/useUser';
 
 export default defineComponent({
   name: "MainLayout",
-  components: { LanguageSelector, LoginBtn },
+  components: { LanguageSelector, LoginBtn, LogoutBtn },
   setup() {
     const leftDrawerOpen = ref(false);
 
@@ -59,5 +63,8 @@ export default defineComponent({
       },
     };
   },
+  computed : {
+    ...mapState(useUser, ['isLogin']),
+  }
 });
 </script>
