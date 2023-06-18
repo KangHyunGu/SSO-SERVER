@@ -89,7 +89,9 @@ module.exports = configure(function (ctx) {
 
 		// https://v2.quasar.dev/quasar-cli-webpack/quasar-config-js#Property%3A-framework
 		framework: {
-			config: {},
+			config: {
+        isDev : !ctx.prod
+      },
 
 			iconSet: 'mdi-v6', // Quasar icon set
 			lang: 'ko-KR', // Quasar language pack

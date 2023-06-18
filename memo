@@ -1,0 +1,19 @@
+한글 : 구글폰트
+  - Noto Sans Korean
+
+git repository
+ - https://github.com/moosin76/sso-server.git
+
+DB
+ - MySQL 5.7
+ CREATE USER 'bnbsso'@'%' IDENTIFIED BY 'test1234';
+ CREATE DATABASE bnbsso DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+ GRANT ALL PRIVILEGES ON bnbsso.* TO 'bnbsso'@'%' WITH GRANT OPTION;
+ FLUSH PRIVILEGES;
+
+ ID : bnbsso
+ PW : test1234
+
+Notion
+ - bnbsso.kro.kr
+
